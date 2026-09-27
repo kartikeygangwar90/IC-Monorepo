@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import HeroContent from './HeroContent';
 import NoticeSection from './NoticeSection';
 import { CLOUDINARY_BASE_URL } from '@/constants/const';
-import { getOptimizedCloudinaryUrl, useNetworkQuality } from '@/utils/cloudinary';
+import { getOptimizedCloudinaryUrl } from '@/utils/cloudinary';
 
 const RAW_HERO_IMAGES = [
   `${CLOUDINARY_BASE_URL}/v1782887029/img15_gvvduj.jpg`,
@@ -17,15 +17,14 @@ export default function HeroSection({ notices = [], heroProps = {} }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentIndexRef = useRef(currentIndex);
   currentIndexRef.current = currentIndex;
-  const networkQuality = useNetworkQuality();
 
   const heroImages = useMemo(() => {
     return RAW_HERO_IMAGES.map((src) =>
-      getOptimizedCloudinaryUrl(src, { width: 1600, networkQuality })
+      getOptimizedCloudinaryUrl(src, { quality: 'q_auto:best' })
     );
-  }, [networkQuality]);
+  }, []);
 
-  // Preload all hero background images on mount / network quality update
+  // Preload all hero background images
   useEffect(() => {
     heroImages.forEach((src) => {
       const img = new Image();
@@ -69,9 +68,8 @@ export default function HeroSection({ notices = [], heroProps = {} }) {
           return (
             <div
               key={src}
-              className={`absolute inset-0 bg-cover bg-center bg-no-repeat sm:bg-fixed transition-opacity duration-1000 ease-in-out ${
-                isVisible ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat sm:bg-fixed transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'
+                }`}
               style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.70), rgba(2, 4, 9, 0.52)), url('${src}')`,
               }}
