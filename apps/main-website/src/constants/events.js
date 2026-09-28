@@ -289,5 +289,30 @@ export const EVENTS_DATA = [
         perk: 'API Development Tools',
       },
     ],
+  },
+  {
+    id: "pitchverse-2026",
+    title: "Pitchverse 2026",
+    tagline: "Where Fiction Gets Funded",
+    category: "Competition",
+    status: "Past",
+    date: "19/09/2026",
+    startDate: "2026-09-19",
+    endDate: null,
+    time: "Patna Campus: TBD | Bihta Campus: TBD",
+    venue: "Patna Campus (CV Raman Hall) & Bihta Campus",
+    mode: "In-Person",
+    image: `${CLOUDINARY_BASE_URL}/pitchverse_2026.jpg`,
+    url: "/timeline",
+    description: "An unconventional entrepreneurship event where fiction meets venture capital. Participants step into the roles of iconic fictional characters and pitch their impossible, absurd, or extraordinary products as if they were real startups seeking investment.",
+    highlights: [
+      "Cosplay and fictional product pitching",
+      "High-energy negotiation and venture capital simulation",
+      "Blending culture, creativity, investment, and entertainment"
+    ],
+    speakers: [
+      { name: "Prof. Bharat Gupta", role: "Professor-In-Charge, IC NITP" }
+    ],
+    eligibility: "All NIT Patna students, aspiring student entrepreneurs, and creators."
   }
 ];

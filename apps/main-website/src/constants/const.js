@@ -9,6 +9,7 @@ export const CLOUDINARY_BASE_URL = "https://res.cloudinary.com/ddb6lsyht/image/u
 
 export const ic_logo = `${CLOUDINARY_BASE_URL}/v1782884080/ic_logo.png`;
 export const nitp_logo = `${CLOUDINARY_BASE_URL}/v1782887916/nitp_logo.png`;
+export const pitchverse_2026_img = `${CLOUDINARY_BASE_URL}/v1782900143/pitchverse_2026.jpg`;
 export const director_profile = "https://www.nitp.ac.in/Institute/Director";
 export const campus_image = "https://images.collegedunia.com/public/college_data/images/campusimage/1611227237IMG_20201103_111253.jpg";
 
